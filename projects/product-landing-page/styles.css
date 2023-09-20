@@ -1,0 +1,241 @@
+:root {
+  --navbar-height: 40px;
+  --price-items-height: 200px;
+  --color-white: #eeeeee;
+  --color-dark: #222222;
+}
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+body {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+#header { /*Push everything down from the fixed header*/
+  margin-bottom: var(--navbar-height);
+}
+#hero-title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: 'Bruno Ace SC';
+}
+.section-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Audiowide;
+}
+.feature-title {
+  text-align: left;
+  font-size: 1.2rem;
+  font-family: Tektur;
+}
+.text {
+  text-align: justify;
+  font-size: 1.2rem;
+  font-family: Tektur;
+}
+.pointer:hover {
+  cursor: pointer;
+}
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+img { /*Filling image horizontally whilst keeping aspect ratio with height: auto*/
+  display: block;
+  height: auto;
+}
+li {
+  width: auto;
+  list-style-type: none;
+}
+.fill-width {
+  width: 100%;
+}
+.fill-height {
+  height: 100%;
+}
+.margin-top-bottom {
+  margin: 2rem 0 2rem 0;
+}
+#nav-bar {
+  width: 90%;
+  height: var(--navbar-height);
+  position: fixed;
+  top: 0;
+  left: 5vw;
+  background-color: var(--color-dark);
+  font-family: 'Share Tech Mono', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+}
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-align-items {
+  align-items: center;
+}
+.flex-justify-right {
+  justify-content: right;
+}
+#nav-home {
+  width: 20%;
+}
+#nav-menu {
+  width: 80%;
+}
+.nav-link {
+  line-height: var(--navbar-height);
+}
+.nav-link:hover {
+  border-width: 0 0 2px 0;
+  border-style: solid;
+  border-color: var(--color-white);
+}
+.anchor-offset { /*Invisible element for anchor to jump correctly to sections, otherwise they will be hidden behind navbar when jumping*/
+  height: var(--navbar-height);
+  margin-top: calc(var(--navbar-height) * -1);
+  display: block;
+  visibility: hidden;
+}
+.video {
+  aspect-ratio: 16 / 9;
+}
+#video {
+  margin-top: 2rem;
+  border-radius: 6px;
+}
+#price-container {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.price-items {
+  height: var(--price-items-height);
+  width: 90%;
+  margin-top: 2rem;
+  text-align: center;
+}
+.price-title {
+  line-height: calc(var(--price-items-height) * 0.25);
+  border: 2px solid var(--color-white);
+  border-radius: 6px 6px 0 0 ;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  font-family: 'Bruno Ace SC';
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.price-specs {
+  height: calc(var(--price-items-height) * 0.55);
+  border-left: 2px solid var(--color-white);
+  border-right: 2px solid var(--color-white);
+  font-family: Tektur;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.price-button {
+  height: calc(var(--price-items-height) * 0.2);
+  border: 0;
+  border-radius: 0 0 6px 6px;
+  color: var(--color-white);
+  background-color: #998554;
+  font-family: Audiowide;
+  font-size: 2rem;
+  font-weight: bold;
+}
+#form {
+  height: 80px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#email-wrapper {
+  height: 40px;
+}
+#email {
+  width: 65%;
+  display: inline-block;
+  border: 2px solid var(--color-white);
+  border-radius: 4px 0 0 4px;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  font-family: Tektur;
+  text-align: center;
+}
+#submit {
+  width: 35%;
+  display: inline-block;
+  border: 2px solid var(--color-white);
+  border-radius: 0 4px 4px 0;
+  color: var(--color-white);
+  font-family: Audiowide;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: var(--color-dark);
+}
+#footer-link-container {
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+#footer-copyright {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#footer-rights {
+  display: inline-block;
+}
+/*Media Query list is taken from https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */
+  html {
+    font-size: 80%;
+  }
+}
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  #submit {
+    font-size: 1rem;
+  }
+}
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  :root {
+    --navbar-height: 60px;
+  }
+  html {
+    font-size: 90%;
+  }
+  #price-container {
+    justify-content: space-between;
+  }
+  .price-items {
+    width: 48%;
+  }
+}
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
+  :root {
+    --navbar-height: 80px;
+  }
+  html {
+    font-size: 100%;
+  }
+  body {
+    margin-left: 15vw;
+    margin-right: 15vw;
+  }
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }

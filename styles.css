@@ -1,0 +1,162 @@
+/* General styles */
+:root {
+  --color-dark: #252A34;
+  --color-white: #eaeaea;
+  --color-red: #ff2e63;
+  --color-blue: #08d9d6;
+}
+@font-face {
+  font-family: IntelOneMono;
+  src: url(fonts/IntelOneMono-Regular.woff2);
+}
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 4vw;
+  color: var(--color-white);
+  font-family: 'IntelOneMono', 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+body {
+  background: linear-gradient(to bottom, var(--color-blue), 5%, var(--color-dark), 95%, var(--color-white));
+}
+a {
+  text-decoration: none;
+}
+section {
+  margin: 0 auto;
+  width: 80vw;
+}
+.grid {
+  display: grid;
+  gap: 10vw;
+  justify-items: center;
+  align-items: center;
+}
+.anchor-offset { /*Invisible element for anchor to jump correctly to sections, otherwise they will be hidden behind navbar when jumping*/
+  height: 5vh;
+  margin-top: 12.5vh;
+  margin-bottom: 12.5vh;
+  display: block;
+  visibility: hidden;
+}
+/* #navbar styles */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--color-blue);
+  & a {color: var(--color-dark);}
+}
+/* #welcome-section */
+#welcome-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#welcome-title, #welcome-description, h2 {
+  text-align: center;
+  font-size: xx-large;
+}
+/* #projects styles */
+.project-tile {
+  width: 100%;
+  height: calc(80vw * 0.75);
+  background-color: var(--color-white);
+  border-radius: 5px;
+}
+.project-tile-anchor {
+  width: 100%;
+  height: 100%;
+}
+.project-tile-thumbnail {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 5px;
+  border-radius: 5px;
+}
+.project-tile-title {
+  text-align: center;
+  vertical-align: bottom;
+  width: 100%;
+  background-color: var(--color-red);
+  height: calc(80vw * 0.75 - (80vw * 9 / 16));
+  border-radius: 0 0 5px 5px;
+  line-height: 1;
+}
+/*
+Magik to vertically align texts inside <p> tag
+Source: https://stackoverflow.com/questions/16442941/vertical-align-inside-p-tag
+*/
+.project-tile-title::after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 0px;
+}
+/* #contact */
+.contact-tile {
+  width: 100%;
+  height: auto;
+}
+.contact-logo {
+  display: block;
+  margin: 0 auto;
+  max-width: 30%;
+  aspect-ratio: 1 /1;
+}
+/* footer */
+footer {
+  margin-top: 50vh;
+  & p {
+    color: var(--color-dark);
+    text-align: center;  
+  }
+}
+/*Media Query list is taken from https://stackoverflow.com/questions/6370690/media-queries-how-to-target-desktop-tablet-and-mobile*/
+@media (min-width:320px) { /* smartphones, iPhone, portrait 480x320 phones */
+}
+@media (min-width:481px) { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width:641px) { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  *, ::before, ::after {
+    font-size: 2.5vw;
+  }
+  .project-tile {
+    width: 35vw;
+    height: calc(35vw * 0.75);
+  }
+  .project-tile-title {
+    height: calc(35vw * 0.75 - (35vw * 9 / 16));
+  }
+  section#projects.grid {
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+  }
+  section#projects h2 {
+    grid-area: 1 / 1 / span 1 / span 2;
+  }
+  section#contact.grid {
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  }
+  section#contact.grid h2 {
+    grid-area: 1 / 1 / span 1 / span 3;
+  }
+}
+@media (min-width:961px) { /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  *, ::before, ::after {
+    font-size: 2vw;
+  }
+}
+@media (min-width:1281px) { /* hi-res laptops and desktops */
+}

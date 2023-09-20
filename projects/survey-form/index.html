@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Survey Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+  </head>
+  <body>
+    <h1 id="title">Pet Survey Form</h1>
+    <p id="description">Thank you for helping me understand your love for pet!</label>
+    <form id="survey-form" action="">
+      <div class="form-group" id="name-form">
+        <p><label id="name-label">Name</label></p>
+        <!--I had some problem doing CSS for <label> because I used it for both section label and radio/checkbox label, so I wrap these section labels into <p> tag instead and do CSS on <p> for them, CSS on <label> for radio/checkbox label-->
+        <input class="form-input" id="name" type="text" pattern="^[A-Za-z][A-Za-z\'\-]+([\ A-Za-z][A-Za-z\'\-]+)*" placeholder="Enter your Name" required/>
+        <!--Regex pattern for name code snippet is taken from https://andrewwoods.net/blog/2018/name-validation-regex/, I have some basic knowledge of regex prior to this that allows me to search and understand the pattern. Thank you Andrew Woods and freeCodeCamp :)-->
+      </div>
+      <div class="form-group" id="email-form">
+        <p><label id="email-label">Email</label></p>
+        <input class="form-input" id="email" type="email" placeholder="Enter your Emeow" required/>
+      </div>
+      <div class="form-group" id="number-form">
+        <p><label id="number-label">Age</label></p>
+        <input class="form-input" id="number" type="number" min="10" max="120" placeholder="Enter your Age (optional)">
+      </div>
+      <div class="form-group" id="radio-form">
+        <p><label>Do you have any pet?</label></p>
+        <label><input class="radio-button" type="radio" name="radio-owner" id="radio-owner-yes" value="Owner-Yes">Yes</label>
+        <label><input class="radio-button" type="radio" name="radio-owner" id="radio-owner-no" value="Owner-No">No</label>
+      </div>
+      <div class="form-group" id="dropdown-form">
+        <p><label>What is your most favorite about pet?</label></p>
+        <select class="form-input" title="pet-survey" id="dropdown">
+          <option class="dropdown-default" value="">Select favorite characteristic</option>
+          <option value="Favorite-Cute">Cute</option>
+          <option value="Favorite-Care">Care</option>
+          <option value="Favorite-Energetic">Energetic</option>
+        </select>
+      </div>
+      <div class="form-group" id="checkbox-form">
+        <p><label>Your pet are?</label></p>
+        <label><input class="checkbox-button" type="checkbox" name="checkbox-pet" id="checkbox-pet-meow" value="Pet-Meow">Meow</label>
+        <label><input class="checkbox-button" type="checkbox" name="checkbox-pet" id="checkbox-pet-woof" value="Pet-Woof">Woof</label>
+        <label><input class="checkbox-button" type="checkbox" name="checkbox-pet" id="checkbox-pet-bunny" value="Pet-Bunny">Bunny</label>
+      </div>
+      <div class="form-group" id="textarea-form">
+        <p><label>Would you like to share your thoughts on pet?</label></p>
+        <textarea class="form-input" rows="3" cols="40" placeholder="Cats are secretly taking over the world"></textarea>
+      </div>
+      <div class="form-group" id="submit-form">
+        <input class="submit-button" id="submit" type="submit" value="Submit">
+      </div>
+      <img alt="image of a relaxing cat looking back at you on his while lying on his back" class="image-end" src="https://bit.ly/fcc-relaxing-cat">
+      <!--It feels much nicer to put a cat at the end, pleading you to submit than create an empty padding-->
+    </form>
+  </body>
+</html>

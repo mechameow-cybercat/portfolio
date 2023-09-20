@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>JavaScript Documentation</title>
+</head>
+<body>
+  <nav id="navbar">
+    <header>JavaScript Documentation</header>
+    <ul>
+      <li>
+        <a class="nav-link" href="#variables">VARIABLES</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#operators">OPERATORS</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#control_structures">CONTROL STRUCTURES</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#functions">FUNCTIONS</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#objects">OBJECTS</a>
+      </li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="variables">
+      <header>
+        VARIABLES
+      </header>
+      <article>
+        <p>These are containers that store values, such as numbers, strings, booleans, arrays, objects, etc.</p>
+        <p>Variables can be declared with keywords like var, let, or const, depending on the scope and mutability of the value.</p>
+        <code>let a = function () {}; var b = []; const c = {};<br/>let x = 0, y = "string", z = true;</code>
+        <ul><li>Variable in JavaScript are loosely typed.</li></ul>
+      </article>
+    </section>
+    <section class="main-section" id="operators">
+      <header>
+        OPERATORS
+      </header>
+      <article>
+        <p>These are symbols that perform arithmetic, logical, or assignment operations on values, such as +, -, *, /, %, &&, ||, =, +=, etc.</p>
+        <p>Operators can be used to manipulate variables and expressions in JavaScript.</p>
+        <code>let a = 0, b = 1; a == b //false</code>
+        <ul><li>There are also bitwise operators.</li></ul>
+      </article>
+    </section>
+    <section class="main-section" id="control_structures">
+      <header>
+        CONTROL STRUCTURES
+      </header>
+      <article>
+        <p>These are statements that control the flow of execution in a program, such as if-else, switch-case, for, while, do-while, break, continue, etc.</p>
+        <p>Control structures can be used to implement conditional logic and loops in JavaScript.</p>
+        <code>
+// If statement to compare the value type of variable x<br/><br/>
+if (typeof x === "number") {</br>
+  // If x is a number, display "x is a number" in the console<br/>
+  console.log("x is a number");
+}<br/><br/>else if (typeof x === "string") {</br>
+  // If x is a string, display "x is a string" in the console<br/>
+  console.log("x is a string");
+}<br/><br/> else if (typeof x === "boolean") {</br>
+  // If x is a boolean, display "x is a boolean" in the console<br/>
+  console.log("x is a boolean");
+}<br/><br/> else if (Array.isArray(x)) {</br>
+  // If x is an array, display "x is an array" in the console<br/>
+  console.log("x is an array");
+}<br/><br/> else {</br>
+  // If x is none of the above, display "x is an object" in the console<br/>
+  console.log("x is an object");
+}</code>
+      <ul><li>They have negligible performance differences.</li></ul>
+      </article>
+    </section>
+    <section class="main-section" id="functions">
+      <header>
+        FUNCTIONS
+      </header>
+      <article>
+        <p>These are blocks of code that can be defined and invoked with a name or anonymously. Functions can accept parameters and return values.</p>
+        <p>Functions can also be assigned to variables or passed as arguments to other functions. Functions are the main way of modularizing and reusing code in JavaScript.</p>
+        <code>// Create a new image element with the link as the source</br>// This function takes a hyperlink parameter and displays an image as a popup from that link</br></br>
+      function showImagePopup (link) {
+  </br><br/>
+  let image = document.createElement("img");</br>
+  image.src = link;</br><br/>
+  // Create a new div element to hold the image and style it as a popup</br>
+  let popup = document.createElement("div");</br>
+  popup.className = "popup";</br>
+  popup.appendChild(image);</br><br/>
+  // Append the popup to the body of the document</br>
+  document.body.appendChild(popup);</br><br/>
+  // Add an event listener to close the popup when clicked</br>
+  popup.addEventListener("click", function() {
+    document.body.removeChild(popup);
+  });</br></br>
+}</code>
+        <ul><li>Function should be good at one thing only, don't wear multiple hats for function.</li></ul>
+      </article>
+    </section>
+    <section class="main-section" id="objects">
+      <header>
+        OBJECTS
+      </header>
+      <article>
+        <p>These are collections of properties and methods that represent data and behavior. Objects can be created with literals, constructors, or the Object.create() method.</p>
+        <p>Objects can inherit from other objects using prototypes or classes. Objects are the main way of organizing and encapsulating code in JavaScript.</p>
+        <code>
+var exampleObject = {<br/><br/>
+  // This is a property that stores a string value.<br/>
+  name: "exampleObject",<br/><br/>
+  // This is a property that stores a number value.<br/>
+  size: 10,<br/><br/>
+  // This is a property that stores an array value.<br/>
+  colors: ["red", "green", "blue"],<br/><br/>
+  // This is a method that returns the name of the object.<br/>
+  getName: function() {
+    return this.name;
+  },<br/><br/>
+  // This is a method that changes the size of the object by a given amount.<br/>
+  resize: function(amount) {
+    this.size += amount;
+  },<br/><br/>
+  // This is a method that adds a new color to the object's array of colors.<br/>
+  addColor: function(color) {
+    this.colors.push(color);
+  }<br/><br/>
+}</code>
+        <ul><li>One of popular data storage format is JSON which utilize JavaScript object syntax to represent data.</li></ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
